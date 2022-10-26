@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import cat from "./assets/kalp-heart.gif";
 import allowed from "./allowed.json";
 function Main() {
-  const [postion, setPosition] = useState({ left: "2rem", top: "2rem" });
+  const [postion, setPosition] = useState({ left: "500px", top: "437px" });
   const [bg, setBg] = useState("");
   const handleYes = (e) => {
     setBg("bg-cover  bg-[url('./assets/gearts.gif')]");
@@ -11,8 +11,9 @@ function Main() {
   const handleNo = () => {
     const max = 240;
     const min = 120;
-    const top = "" + (Math.floor(Math.random() * (max - min)) + min) + "px";
-    const left = "" + (Math.floor(Math.random() * (max - min)) + min) + "px";
+    const top = "" + (Math.floor(Math.random() * (max - min + 1)) + min) + "px";
+    const left =
+      "" + (Math.floor(Math.random() * (max - min + 1)) + min) + "px";
     if (left > 320 && left < 400) {
       handleNo();
     }
@@ -36,7 +37,7 @@ function Main() {
           id="No"
           className={`bg-blue-500 py-2 px-4 m-8 m-w-sm text-white font-bold fixed rounded bottom-50 left-1/3`}
           onMouseOver={handleNo}
-          style={{ marginLeft: postion.left, marginTop: postion.top }}
+          style={{ left: postion.left, top: postion.top }}
         >
           Nope !
         </button>
