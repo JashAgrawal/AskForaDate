@@ -84,7 +84,7 @@ const TrailImages = ({ distanceThreshold = 30 }) => {
     if (mouseDistance > distanceThreshold) {
       const newIndex = index + 1;
       const imageIndex = wrap(0, colors.length - 1, newIndex);
-
+      //@ts-ignore
       imagePositions.current[imageIndex] = {
         xOrigin: mouseInfo.prev.x,
         yOrigin: mouseInfo.prev.y,
