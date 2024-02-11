@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CursorProvider from "@/context/cursor-context";
+import Cursor from "@/components/cursor";
+import TrailImages from "@/components/trail";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <TrailImages />
+        <CursorProvider>
+          {children}
+          {/* <Cursor>
+            {children}
+            </Cursor> */}
+        </CursorProvider>
+      </body>
     </html>
   );
 }
